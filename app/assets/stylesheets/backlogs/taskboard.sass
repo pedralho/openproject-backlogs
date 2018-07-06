@@ -65,10 +65,9 @@
   #assigned_to_id_options
     display: none
   .swimlane
-    min-width: 105px
-    /* width + (2*margin) + (2*padding) + (2*border) of .work_package */
-    padding: 5px 0 0 5px
-    width: 105px
+    min-width: 180px
+    padding: 4px
+    width: 180px
     /* Must be the same as min-width */
   #board_header
     background-color: #EBEBEB
@@ -121,37 +120,43 @@
         cursor: pointer
         background-color: #ffffcc
   .story, .label_sprint_impediments
+    font-size: 16px
     background-color: #F8F6A5
-    border: none
+    border: 1px solid #888
+    border-radius: 6px
     display: block
     float: left
-    height: 80px
+    height: auto
     margin: 5px
-    padding: 5px
+    padding: 4px
     position: relative
-    width: 190px
+    min-width: 150px
+    box-shadow: 2px 2px #d3d3d3
   .story
     .subject
-      height: 42px
-      line-height: 13px
+      font-size: 16px
+      height: auto
+      line-height: 18px
       margin-top: 0
       overflow: hidden
       padding: 2px
-      width: 180px
+      min-width: 150px
     &.closed .subject
       text-decoration: line-through
   .work_package, .placeholder
-    background-color: #AFAFAF
-    border: none
+    background-color: #D4D4D4
+    box-shadow: 2px 2px #D3D3D3
+    border: 1px solid #888
+    border-radius: 6px
     cursor: move
     display: block
     float: left
     font-size: 10px
-    height: 80px
+    height: auto
     margin: 5px
     padding: 5px
     position: relative
-    width: 85px
+    min-width: 160px
   .work_package.prevent_edit
     cursor: default
   .placeholder
@@ -304,8 +309,11 @@
 .story
   .story-bar
     @include story-header
+    font-size: 16px
+    min-width: 150px
+    padding: 4px
+    margin-bottom: 8px
     text-align: right
-    width: 180px
     clear: both
     .id
       float: right
@@ -320,20 +328,37 @@
   .id
     @include story-header
     text-align: right
-    width: 75px
+    min-width: 150px
+    font-size: 16px
+    padding: 4px
+    margin-bottom: 8px
     a
       opacity: 1.0
       filter: alpha(opacity = 100)
   .editable:hover
     background-color: transparent
   .subject.editable
-    font-size: 1rem - rem-calc(3px)
+    font-size: 16px
     height: 42px
-    line-height: 13px
+    line-height: 18px
     margin-top: 0
+    margin-bottom: 8px
     overflow: hidden
-    padding: 2px
-    width: 81px
+    padding: 4px
+    min-width: 150px
+
+.placeholder
+  .id
+    min-width: 150px
+    font-size: 16px
+    padding: 4px
+    margin-bottom: 8px
+  .subject
+    min-width: 150px
+    padding: 4px
+    margin-bottom: 8px
+    font-size: 16px
+    line-height: 18px
 
 .story
   .story-footer
@@ -348,6 +373,21 @@
     @include story-footer
     .t
       @include ellipsis
+    min-width: 150px
+    padding: 4px
+    margin-bottom: 0px
+    font-size: 16px
+    line-height: 18px
+    border-top: 1px solid white
+
+.placeholder
+  .assigned_to_id.editable
+    min-width: 150px
+    padding: 4px
+    margin-bottom: 0px
+    font-size: 16px
+    line-height: 18px
+    border-top: 1px solid white
 
 /* Toolbar modifications (no support for labels form the component) */
 
